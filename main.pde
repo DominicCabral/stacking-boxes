@@ -1,24 +1,31 @@
-ArrayList<VanishingCircle> circles = new ArrayList<VanishingCircle>();
-boolean clearCircles = false;
+ArrayList<VanishingBoxes> boxes = new ArrayList<VanishingBoxes>();
+boolean clearboxes = false;
 int backgroundColor = 0;
 
 void setup(){
   background(backgroundColor);
-  size(500,500);
+  pixelDensity(2);
+  size(1000, 1000, P3D);
   surface.setResizable(true);
   frameRate(30);  
 }
 
 void draw(){
-  if(clearCircles){
+  lights();
+
+  if(clearboxes){
     background(backgroundColor);
   }
   
   if(mousePressed){
-    circles.add(new VanishingCircle(int(random(75,100)),100, mouseX, mouseY));
+    boxes.add(new VanishingBoxes(int(random(25,100)),100, mouseX, mouseY));
+  }
+
+  if(keyPressed){
+    save("main.jpg");
   }
   
-  for (VanishingCircle circle: circles) {
-      circle.update();
+  for (VanishingBoxes box: boxes) {
+      box.update();
   }
 }

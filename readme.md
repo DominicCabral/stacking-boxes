@@ -1,11 +1,3 @@
-# Vanishing Circles
+# Stacking Boxes
 
-My first processing project
-
-## clearCircles = true;
-
-![gif](./preview1.gif)
-
-## clearCircles = false;
-
-![gif](./preview2.gif)
+![Sample](./main.jpg)
