@@ -4,7 +4,7 @@ My first processing project
 
 ## clearCircles = true;
 
-![gif](./preview.gif)
+![gif](./preview1.gif)
 
 ## clearCircles = false;
 
