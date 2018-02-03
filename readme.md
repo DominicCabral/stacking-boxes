@@ -2,4 +2,10 @@
 
 My first processing project
 
-![gif](./Preview.gif)
+## clearCircles = true;
+
+![gif](./preview.gif)
+
+## clearCircles = false;
+
+![gif](./preview2.gif)
