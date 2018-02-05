@@ -2,9 +2,8 @@ import java.util.Random;
 
 class VanishingBoxes {
   int minOpacity;
-  float r,g,b, size, opacity, shakeRange, xPoint, yPoint, zPoint, iterations;
+  float r,g,b, size, opacity, xPoint, yPoint, zPoint, iterations;
   boolean completed, spinRight;
-  
   VanishingBoxes(int s, int o, int x, int y){
    opacity = o;
 
@@ -16,7 +15,6 @@ class VanishingBoxes {
    r = random(255);
    g = random(255);
    b = random(255);
-   shakeRange = 5;
    minOpacity = 1;
    completed = false;
    spinRight = getRandomBoolean();
@@ -28,11 +26,11 @@ class VanishingBoxes {
     if(!completed){
 
       if(opacity > minOpacity){
+        float shakeRange = globalShakeRange;
         opacity = opacity - opacity/100.0;
-        shakeRange = shakeRange - shakeRange/100.0;
         xPoint = xPoint + int(random(-shakeRange,shakeRange));
         yPoint = yPoint + int(random(-shakeRange,shakeRange));
-        zPoint = zPoint - size*.25;
+        zPoint = zPoint - size*.5;
 
          //lower color
          r = r - r/100;
@@ -59,8 +57,9 @@ class VanishingBoxes {
 
 
       // stroke(b,g,r,opacity);
-      stroke(255,255,255,opacity);
-      fill(r,g,b,opacity);
+      // stroke(255,255,255,opacity);
+      fill(r,0,b,opacity);
+      noStroke();
       translate(xPoint, yPoint, zPoint);
       rotateX(iterations*PI/60.0);
       rotateY(iterations*PI/120.0);
